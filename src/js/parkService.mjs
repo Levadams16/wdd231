@@ -91,7 +91,7 @@ const park = {
       url: "https://www.nps.gov/common/uploads/structured_data/3C7D383B-1DD8-B71B-0BEC4A4D6BDF7CAD.jpg"
     },
     {
-      credit: "NPS/Jim Peaco",
+      credit: "NPS/Diane Renkin",
       title: "Beehive Geyser",
       altText: "People on a wooden boardwalk watch a geyser erupt.",
       caption: "Visitors to the Upper Geyser Basin watch Beehive Geyser erupt.",
@@ -179,6 +179,32 @@ const park = {
   designation: "National Park"
 };
 
+const parkInfoLinks = [
+    {
+        name: "Current Conditions &#x203A;",
+        link: "conditions.html",
+        image: park.images[2].url,
+        description: 
+            "See what conditions to expect in the park before leaving on your trip!"
+    },
+    {
+        name: "Fees and Passes &#x203A;",
+        link: "fees.html",
+        image: park.images[3].url,
+        description:
+            "Learn about the fees and passes that are available."
+    },
+    {
+        name: "Visitor Centers &#x203A;",
+        link: "visitors_center.html",
+        image: park.images[9].url,
+        description:
+            "Learn about the visitors center in the park."
+    }
+];
+
 export function getParkData() {
   return park;
 }
+
+export {parkInfoLinks};

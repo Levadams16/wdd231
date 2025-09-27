@@ -1,34 +1,29 @@
-import { getParkData } from "./parkService.mjs";
+import { getParkData, parkInfoLinks } from "./parkService.mjs";
+import setHeaderFooter from "./setHeaderFooter.mjs";
+import { mediaCardTemplate} from "./templates.mjs";
 
-const parkData = getParkData();
+document.addEventListener("DOMContentLoaded", function() {
+    const parkData = getParkData();
+    
+    setHeaderFooter(parkData);
+    setParkIntro(parkData);
+    setParkInfoLinks(parkInfoLinks);
+});
 
-const parkLink = document.getElementById("park-link");
-
-if (parkLink) {
-    parkLink.textContent = parkData.fullName;
-    parkLink.href = parkData.url;
+function setParkIntro(data) {
+    const introEl = document.querySelector(".intro");
+    if (introEl) {
+        introEl.innerHTML = `
+            <h1>${data.fullName}</h1>
+            <p>${data.description}</p>
+        `;
+    }
 }
 
-const parkTitle = document.getElementById("park-title");
-
-if (parkTitle) {
-    parkTitle.textContent = parkData.name;
-    parkTitle.href = parkData.url
+function setParkInfoLinks(data) {
+    const infoEl = document.querySelector(".info");
+    if (infoEl) {
+        const html = data.map(mediaCardTemplate);
+        infoEl.innerHTML = html.join("");
+    }
 }
-
-const heroImage = document.getElementById("hero-image");
-
-if (heroImage) {
-    heroImage.src = parkData.images[0].url;
-    heroImage.alt = parkData.images[0].altText;
-}
-
-const parkDesignation = document.getElementById("park-designation");
-
-if (parkDesignation) {
-    parkDesignation.textContent = parkData.designation;
-}
-
-const parkStates = document.getElementById("park-states");
-
-if (parkStates.textContent = parkData.states);
