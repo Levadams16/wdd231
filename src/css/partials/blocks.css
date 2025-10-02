@@ -1,0 +1,22 @@
+.media-card {
+    padding: 1rem;
+    margin: 10px 0;
+}
+
+.media-card__image {
+    height: auto;
+}
+
+.media-card__title a {
+  text-decoration: none;
+  color: var(--bs-black);
+}
+
+.info {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.intro {
+  padding: 20px;
+}
