@@ -1,10 +1,16 @@
+main {
+    margin: 0 100px;
+}
+
 .media-card {
     padding: 1rem;
     margin: 10px 0;
 }
 
 .media-card__image {
-    height: auto;
+    height: 270px;
+    width: 100%;
+    object-fit: cover;
 }
 
 .media-card__title a {
