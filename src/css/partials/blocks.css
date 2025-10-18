@@ -26,3 +26,11 @@ main {
 .intro {
   padding: 20px;
 }
+
+.alert .icon {
+  border-radius: 50%;
+}
+
+.activities {
+  margin-bottom: 10px;
+}

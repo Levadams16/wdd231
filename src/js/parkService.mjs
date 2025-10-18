@@ -229,6 +229,16 @@ export async function getParkData() {
   return parkData.data[0];
 }
 
+export async function getParkAlerts() {
+  const alertData = await getJson("alerts?parkCode=asis");
+  return alertData.data;
+}
+
+export async function getVisitorCenterData(parkCode) {
+  const visitorData = await getJson(`visitorcenters?parkCode=${parkCode}`);
+  return visitorData.data;
+}
+
 export function getInfoLinks(data) {
   const updatePicture = parkInfoLinks.map((item, index) => {
     item.image = data[index + 2].url;
