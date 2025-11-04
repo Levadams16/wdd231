@@ -2,8 +2,8 @@ import { getParkData, getParkAlerts, getVisitorCenterData } from "./parkService.
 import setHeaderFooter from "./setHeaderFooter.mjs";
 import { alertTemplate, visitorTemplate, activityTemplate } from "./templates.mjs";
 
-import "../css/style.css";
-import "../css/partials/conditions.css";
+// import "../css/style.css";
+// import "../css/partials/conditions.css";
 
 function setAlerts(data) {
     const alertsEl = document.querySelector(".alert-list");
@@ -36,6 +36,41 @@ function setActivities(parkData) {
     activitiesEl.innerHTML = html;
 }
 
+function enableNavigation() {
+    const menuButton = document.querySelector("#global-nav-toggle");
+    const globalNav = document.querySelector(".global-nav");
+    
+    if (!menuButton) {
+        console.error('Menu button not found');
+        return;
+    }
+    
+    if (!globalNav) {
+        console.error('Global navigation not found');
+        return;
+    }
+    
+    menuButton.addEventListener("click", (ev) => {
+        let target = ev.target;
+        
+        globalNav.classList.toggle("show");
+        
+        if (target.tagName !== "BUTTON") {
+            target = target.closest("button");
+        }
+        
+        if (globalNav.classList.contains("show")) {
+            target.setAttribute("aria-expanded", "true");
+            target.setAttribute("aria-label", "Close Menu");
+        } else {
+            target.setAttribute("aria-expanded", "false");
+            target.setAttribute("aria-label", "Open Menu");
+        }
+        
+        console.log("Menu toggled");
+    });
+}
+
 async function init() {
     const parkData = await getParkData();
     const alertData = await getParkAlerts();
@@ -44,6 +79,7 @@ async function init() {
     setAlerts(alertData);
     setVisitorCenters("asis");
     setActivities(parkData);
+    enableNavigation();
 }
 
 init();

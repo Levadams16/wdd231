@@ -4,7 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Assateague Island National Seashore</title>
-    <script type="module" src="js/main.js" defer></script>
+    <script type="module" src="js/main.js"></script>
+    <link rel="stylesheet" href="css/style.css"/>
   </head>
   <body>
     <p class="disclaimer">
@@ -50,22 +51,40 @@
           <div class="global-header__right">
             <a class="search-icon" href="#park-footer">
               <svg class="icon">
-                <use xlink:href="/images/sprite.symbol.svg#search"></use>
+                <use xlink:href="images/sprite.symbol.svg#search"></use>
               </svg>
               <span class="visually-hidden">Search</span>
             </a>
-            <button id="global-nav-toggle">
-              <div class="menu-icon">
+            <button 
+              id="global-nav-toggle" 
+              class="global-nav__toggle"
+              aria-expanded="false"
+              aria-label="Open Menu"
+            >
+              <div class="global-nav__toggle--closed">
                 <svg class="icon">
-                  <use xlink:href="/images/sprite.symbol.svg#menu"></use>
+                  <use xlink:href="images/sprite.symbol.svg#menu"></use>
                 </svg>
                 <span class="visually-hidden">Open</span>
                 <span class="menu-text">MENU</span>
               </div>
+              <div class="global-nav__toggle--open">
+                <svg class="icon">
+                  <use xlink:href="images/sprite.symbol.svg#close"></use>
+                </svg>
+                <span class="menu-text">CLOSE</span>
+              </div>
             </button>
+              <!-- <div class="menu-icon">
+                <svg class="icon">
+                  <use xlink:href="images/sprite.symbol.svg#menu"></use>
+                </svg>
+                <span class="visually-hidden">Open</span>
+                <span class="menu-text">MENU</span>
+              </div> -->
           </div>
         </section>
-        <!-- <nav class="global-nav">
+        <nav class="global-nav">
           <h2 class="global-nav__section-heading">Explore this Park</h2>
           <ul class="global-nav__list">
             <li>
@@ -82,7 +101,7 @@
               </div>
             </li>
           </ul>
-        </nav> -->
+        </nav>
       </section>
         <div class="hero-banner">
           <img id="hero-image" src="https://www.nps.gov/common/uploads/structured_data/3C7D5920-1DD8-B71B-0B83F012ED802CEA.jpg" alt="">
@@ -98,31 +117,31 @@
         <a class="info-icon" href="conditions.html">
           <span>Info</span>
           <svg class="icon" role="presentation" focusable="false">
-            <use xlink:href="/images/sprite.symbol.svg#info"></use>
+            <use xlink:href="images/sprite.symbol.svg#info"></use>
           </svg>
         </a>
         <a href="conditions.html">
           <span>Alert</span>
           <svg class="icon" role="presentation" focusable="false">
-            <use xlink:href="/images/sprite.symbol.svg#alert"></use>
+            <use xlink:href="images/sprite.symbol.svg#alert"></use>
           </svg>
         </a>
         <a href="#">
           <span>Location</span>
           <svg class="icon" role="presentation" focusable="false">
-            <use xlink:href="/images/sprite.symbol.svg#location"></use>
+            <use xlink:href="images/sprite.symbol.svg#location"></use>
           </svg>
         </a>
         <a href="#">
           <span>Calendar</span>
           <svg class="icon" role="presentation" focusable="false">
-            <use xlink:href="/images/sprite.symbol.svg#calendar"></use>
+            <use xlink:href="images/sprite.symbol.svg#calendar"></use>
           </svg>
         </a>
         <a href="#">
           <span>Pass</span>
           <svg class="icon" role="presentation" focusable="false">
-            <use xlink:href="/images/sprite.symbol.svg#fee-22"></use>
+            <use xlink:href="images/sprite.symbol.svg#fee-22"></use>
           </svg>
         </a>
       </section>

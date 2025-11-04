@@ -1,9 +1,9 @@
-import { getParkData, parkInfoLinks, getInfoLinks } from "./parkService.mjs";
+import { getParkData, getInfoLinks } from "./parkService.mjs";
 import setHeaderFooter from "./setHeaderFooter.mjs";
 import { mediaCardTemplate} from "./templates.mjs";
 
-import "../css/style.css";
-import "../css/partials/home.css";
+// import "../css/style.css";
+// import "../css/partials/home.css";
 
 document.addEventListener("DOMContentLoaded", function() {
 
@@ -28,13 +28,51 @@ function setParkInfoLinks(data) {
 }
 
 
-async function init() {
-    const parkData = await getParkData();
-    const links = getInfoLinks(parkData.images);
+function enableNavigation() {
+    const menuButton = document.querySelector("#global-nav-toggle");
+    
+    if (!menuButton) {
+        console.error('Menu button not found');
+        return;
+    }
+    
+    menuButton.addEventListener("click", (ev) => {
+        let target = ev.target;
+        
+        document.querySelector(".global-nav").classList.toggle("show");
+        
+        if (target.tagName !== "BUTTON") {
+            target = target.closest("button");
+        }
+        
+        if (document.querySelector(".global-nav").classList.contains("show")) {
+            target.setAttribute("aria-expanded", "true");
+            target.setAttribute("aria-label", "Close Menu");
+        } else {
+            target.setAttribute("aria-expanded", "false");
+            target.setAttribute("aria-label", "Open Menu");
+        }
+        
+        console.log("Menu toggled");
+    });
+}
 
-    setHeaderFooter(parkData);
-    setParkIntro(parkData);
-    setParkInfoLinks(parkInfoLinks);
+async function init() {
+    console.log('Working...');
+    try {
+        const parkData = await getParkData();
+        const links = getInfoLinks(parkData.images);
+
+        setHeaderFooter(parkData);
+        setParkIntro(parkData);
+        setParkInfoLinks(links);
+        
+        enableNavigation();
+        
+        console.log('Work complete');
+    } catch (error) {
+        console.error('Work error:', error);
+    }
 }
 
 init();

@@ -239,12 +239,13 @@ export async function getVisitorCenterData(parkCode) {
   return visitorData.data;
 }
 
-export function getInfoLinks(data) {
-  const updatePicture = parkInfoLinks.map((item, index) => {
-    item.image = data[index + 2].url;
-    return item;
+export function getInfoLinks(images) {
+  return parkInfoLinks.map((item, index) => {
+    return {
+      ...item,
+      image: images[index + 2]?.url || item.image
+    };
   });
-  return updatePicture;
 }
 
 export {parkInfoLinks};
