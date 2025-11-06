@@ -67,4 +67,3 @@ document.querySelector('#clearBtn').addEventListener ('click', () => {
     alert('Note cleared!');
 
 });
-
