@@ -5,6 +5,7 @@ body {
 
 img {
   max-width: 100%;
+  margin-left: 10px;
 }
 
 .logoImg {
@@ -22,4 +23,10 @@ img {
 
 header {
     border-bottom: 10px solid rgb(255, 173, 80);
+}
+
+main {
+    max-width: 320px;
+    border: 1px solid black;
+    margin: 20px auto
 }
