@@ -27,36 +27,6 @@ function setParkInfoLinks(data) {
     }
 }
 
-
-function enableNavigation() {
-    const menuButton = document.querySelector("#global-nav-toggle");
-    
-    if (!menuButton) {
-        console.error('Menu button not found');
-        return;
-    }
-    
-    menuButton.addEventListener("click", (ev) => {
-        let target = ev.target;
-        
-        document.querySelector(".global-nav").classList.toggle("show");
-        
-        if (target.tagName !== "BUTTON") {
-            target = target.closest("button");
-        }
-        
-        if (document.querySelector(".global-nav").classList.contains("show")) {
-            target.setAttribute("aria-expanded", "true");
-            target.setAttribute("aria-label", "Close Menu");
-        } else {
-            target.setAttribute("aria-expanded", "false");
-            target.setAttribute("aria-label", "Open Menu");
-        }
-        
-        console.log("Menu toggled");
-    });
-}
-
 async function init() {
     console.log('Working...');
     try {
@@ -66,8 +36,6 @@ async function init() {
         setHeaderFooter(parkData);
         setParkIntro(parkData);
         setParkInfoLinks(links);
-        
-        enableNavigation();
         
         console.log('Work complete');
     } catch (error) {

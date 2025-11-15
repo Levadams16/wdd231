@@ -1,3 +1,39 @@
+.global-nav__section-heading {
+  padding-left: 10px;
+  color: var(--bs-chathams-blue-3);
+}
+
+.global-nav__list, .global-nav__submenu {
+  list-style-type: none;
+  padding-left: 0px;
+}
+
+.global-nav__submenu {
+  display: none;
+}
+
+.global-nav__submenu.show {
+  display: block; 
+}
+
+.global-nav__submenu > li{
+  padding: 15px 5px;
+}
+
+.global-nav__submenu > li:hover {
+  background-color: var(--bs-gray-900);
+}
+
+.global-nav__submenu a {
+  text-decoration: none;
+  color: white;
+}
+
+.global-nav__split-button {
+  background-color: var(--bs-gray-800);
+  padding-left: 10px;
+}
+
 .global-nav__split-button button {
   background-color: black;
   border-style: none;
@@ -6,10 +42,12 @@
 .global-nav__split-button a {
   color: white;
   text-decoration: none;
+  font-size: 1.5rem;
 }
 
 .global-nav__split-button__toggle svg {
   height: 15px;
+  background-color: var(--bs-gray-800);
 }
 
 .global-nav {
@@ -36,6 +74,10 @@
 
 .global-nav__toggle {
   background-color: black;
+}
+
+.global-nav__toggle:hover {
+  cursor: pointer;
 }
 
 .global-nav__toggle--closed {
@@ -102,6 +144,10 @@
 .icon {
   height: 40px;
   width: 40px;
+}
+
+.icon.rotate {
+  transform: rotate(180deg);
 }
 
 .global-header__right {
@@ -211,4 +257,42 @@
 #park-header svg.icon {
   width: 32px;
   height: 32px;
+}
+
+@media screen and (min-width: 650px) {
+  .global-nav__section-heading {
+    display: none;
+  }
+
+  .global-nav__list:first-of-type 
+  li:first-child 
+  .global-nav__split-button {
+    display: none;
+  }
+
+  .global-nav__split-button {
+    background-color: black;
+    padding: 0;
+  }
+
+  .global-nav__split-button__toggle svg {
+    display: none;
+  }
+
+  .global-nav__submenu {
+    display: block;
+  }
+
+  .global-nav__list {
+    margin-left: 200px;
+  }
+
+  ul {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .global-nav__submenu > li {
+    padding-left: 0;
+  }
 }

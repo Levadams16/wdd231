@@ -1,4 +1,5 @@
 import {footerTemplate} from "./templates.mjs";
+import enableNavigation from "./navigation.mjs";
 
 function setHeaderInfo(data) {
     const parkLink = document.getElementById("park-link");
@@ -12,7 +13,7 @@ function setHeaderInfo(data) {
 
     if (parkTitle) {
         parkTitle.textContent = data.name;
-        parkTitle.href = data.url
+        parkTitle.href = data.url;
     }
 
     const heroImage = document.getElementById("hero-image");
@@ -46,4 +47,5 @@ function setFooter(data) {
 export default function setHeaderFooter(parkData) {
     setHeaderInfo(parkData);
     setFooter(parkData);
+    enableNavigation();
 }
