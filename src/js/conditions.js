@@ -1,6 +1,6 @@
 import { getParkData, getParkAlerts, getVisitorCenterData } from "./parkService.mjs";
 import setHeaderFooter from "./setHeaderFooter.mjs";
-import { alertTemplate, visitorTemplate, activityTemplate } from "./templates.mjs";
+import { alertTemplate, visitorCenterTemplate, activityTemplate } from "./templates.mjs"; // Changed visitorTemplate to visitorCenterTemplate
 
 // import "../css/style.css";
 // import "../css/partials/conditions.css";
@@ -21,7 +21,7 @@ async function setVisitorCenters(parkCode) {
     const visitorCenters = await getVisitorCenterData(parkCode);
 
     const listElement = document.querySelector(".visitor_services ul");
-    listElement.innerHTML = visitorCenters.map(visitorTemplate).join("");
+    listElement.innerHTML = visitorCenters.map(visitorCenterTemplate).join(""); // Changed visitorTemplate to visitorCenterTemplate
 }
 
 function setActivities(parkData) {

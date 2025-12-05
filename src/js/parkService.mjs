@@ -216,6 +216,7 @@ async function getJson(url) {
       "X-Api-Key": apiKey
     }
   };
+  
   let data = {};
   const response = await fetch(baseUrl + url, options);
   if (response.ok) {
@@ -246,6 +247,11 @@ export function getInfoLinks(images) {
       image: images[index + 2]?.url || item.image
     };
   });
+}
+
+export async function getParkVisitorCenterDetails(id) {
+  const parkData = await getJson(`visitorcenters?id=${id}`);
+  return parkData.data[0];
 }
 
 export {parkInfoLinks};

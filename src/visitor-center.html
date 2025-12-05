@@ -4,9 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Assateague Island National Seashore</title>
-    <script type="module" src="js/conditions.js" defer></script>
+    <script type="module" src="/js/main.js"></script>
+    <script type="module" src="/js/visitor-center.js"></script>
     <link rel="stylesheet" href="css/style.css"/>
-    <link rel="stylesheet" href="css/conditions.css"/>
+    <link rel="stylesheet" href="css/visitor-center.css"/>
   </head>
   <body>
     <p class="disclaimer">
@@ -76,6 +77,13 @@
                 <span class="menu-text">CLOSE</span>
               </div>
             </button>
+              <!-- <div class="menu-icon">
+                <svg class="icon">
+                  <use xlink:href="images/sprite.symbol.svg#menu"></use>
+                </svg>
+                <span class="visually-hidden">Open</span>
+                <span class="menu-text">MENU</span>
+              </div> -->
           </div>
         </section>
         <nav class="global-nav">
@@ -213,25 +221,82 @@
       </section>
     </header>
     <main id="main">
-      <h1>Current Conditions</h1>
-      <section class="alerts">
-        <h2>Alerts</h2>
-        <div class="alert-list"></div>
-      </section>
-      <section class="visitor_services">
-        <h2>Visitor Services</h2>
-        <details name="current_details">
-          <summary>Visitor Centers</summary>
-          <ul></ul>
-        </details>
-      </section>
-      <section class="activities">
-        <h2>Activities</h2>
-        <details name="current_details">
-          <summary>All Activities</summary>
-          <ul></ul>
-        </details>
-      </section>
+         <h1 class="vc-name">
+            <svg class="icon" role="presentation" focusable="false">
+                <use
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                xlink:href="/images/sprite.symbol.svg#ranger-station"
+                ></use>
+            </svg>
+            [Visitor center name]
+        </h1>
+        <section class="vc-info">
+            <figure>
+                <img src="images/arrow.svg" alt="center image" />
+                <figcaption>
+                [visitor center image] <span>[attribution]</span>
+                </figcaption>
+            </figure>
+            <p>[info here]</p> 
+        </section>
+        <section class="vc-details-list">
+            <details name="vc-details" id="vcAddresses">
+                <summary>
+                <svg class="icon" role="presentation" focusable="false">
+                    <use
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/images/sprite.symbol.svg#heading-icon_map-pin"
+                    ></use>
+                </svg>
+                Addresses
+                </summary>
+            </details>
+            <details name="vc-details" id="vcDirections">
+                <summary>
+                <svg class="icon" role="presentation" focusable="false">
+                    <use
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/images/sprite.symbol.svg#directions"
+                    ></use>
+                </svg>
+                Directions
+                </summary>
+            </details>
+            <details name="vc-details" id="vcAmenities">
+                <summary>
+                <svg class="icon" role="presentation" focusable="false">
+                    <use
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/images/sprite.symbol.svg#heading-icon_info"
+                    ></use>
+                </svg>
+                Amenities
+                </summary>
+            </details>
+            <details name="vc-details" id="vcContact">
+                <summary>
+                <svg class="icon" role="presentation" focusable="false">
+                    <use
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/images/sprite.symbol.svg#phone"
+                    ></use>
+                </svg>
+                Contact Information
+                </summary>
+            </details>
+        </section>
+        <section class="vc-gallery">
+            <h2>
+                <svg class="icon" role="presentation" focusable="false">
+                <use
+                    xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/images/sprite.symbol.svg#camera-alt"
+                ></use>
+                </svg>
+                Image Gallery
+            </h2>
+            <ul></ul>
+        </section>
     </main>
     <footer id="park-footer">
       
